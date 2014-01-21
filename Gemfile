@@ -32,6 +32,17 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'pry-rails'
+  gem "rspec-rails", "~> 3.0.0.beta"
+  gem "factory_girl_rails", ">= 4.3.0"
+  gem "cucumber-rails", :require => false
+  gem "database_cleaner"
+  gem "capybara"
+  gem "launchy"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -44,7 +55,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "mongoid"
+gem "mongoid", "4.0.0.alpha2"
 gem "skim"
 gem "slim-rails"
 gem "font-awesome-sass"
@@ -56,9 +67,3 @@ gem "inherited_resources"
 gem "quiet_assets"
 gem "active_model_serializers"
 gem "carrierwave", ">= 0.9.0"
-gem "rspec-rails", "~> 3.0.0.beta"
-gem "factory_girl_rails", ">= 4.3.0"
-gem "cucumber-rails"
-gem "database_cleaner"
-gem "capybara"
-gem "launchy"
